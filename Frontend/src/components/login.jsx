@@ -14,7 +14,6 @@ function Login() {
     e.preventDefault();
     
     try {
-      
       const response = await axios.post('http://localhost:4000/login', {
         email,
         password
@@ -25,7 +24,6 @@ function Login() {
       } else if (response.data.role === 'teacher' || response.data.role === 'Teacher') {
         navigate('/teacherDashboard');
       } else {
-        
         console.log('Unknown role received from server');
       }
     } catch (error) {
@@ -96,7 +94,7 @@ function Login() {
             {/* Signup Link */}
             <div className="flex justify-center pt-2">
               <NavLink to="/register" className="font-montserrat text-gray-700 text-sm">
-                Don't have an account yet? <span className="text-black font-bold">Sign Up</span>
+                Don't have an account yet? <span className="text-black font-bold hover:underline">Sign Up</span>
               </NavLink>
             </div>
           </form>

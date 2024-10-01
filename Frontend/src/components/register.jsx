@@ -47,7 +47,7 @@ function Register() {
       {/* Register Outer Div */}
       <div className="w-full h-auto flex mt-10 justify-center">
         {/* Register Div */}
-        <div className="relative bg-white h-[600px] min-w-[369px] flex flex-col items-center justify-around p-8 shadow-green-400 shadow-2xl rounded-lg">
+        <div className="relative bg-white h-[600px] min-w-[369px] flex flex-col items-center justify-around p-8 shadow-green-400 shadow-xl rounded-lg">
           {/* Header */}
           <div className="flex flex-col items-center">
             <img src={favicon} alt="logo" className="h-auto w-14 mb-1" />
