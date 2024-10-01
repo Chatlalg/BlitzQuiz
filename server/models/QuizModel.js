@@ -7,16 +7,15 @@ const userSchema = new mongoose.Schema({
         unique:true
 
     },
-    role:{
-        required:true,
-        type:String,
-
-    },
     quizid:{
         required:true,
         type:Number
     },
-    quizdata:{
+    quizquestion:{
+        required:true,
+        type:String
+    },
+    quizanswer:{
         required:true,
         type:String
     }
