@@ -20,9 +20,9 @@ function Login() {
         password
       });
       
-      if (response.data.role === 'student') {
+      if (response.data.role === 'student' || response.data.role === 'Student') {
         navigate('/studentDashboard');
-      } else if (response.data.role === 'teacher') {
+      } else if (response.data.role === 'teacher' || response.data.role === 'Teacher') {
         navigate('/teacherDashboard');
       } else {
         

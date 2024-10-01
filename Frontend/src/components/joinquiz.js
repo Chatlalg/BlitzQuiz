@@ -18,8 +18,8 @@ const JoinQuiz = () => {
     };
 
     return (
-        <div className="relative w-3/4 h-1/4">
-            <div className="bg-green-400 p-6 rounded-lg shadow-lg">
+        <div className="relative w-auto h-full flex justify-center">
+            <div className="bg-green-400 p-6 rounded-lg shadow-lg ">
                 <h3 className='font-sourceSans text-white text-3xl font-black shadow-header '>Join a Quiz!</h3>
                 <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
                     {/* Join ID */}
@@ -29,7 +29,7 @@ const JoinQuiz = () => {
                             id="joinId"
                             value={joinId}
                             onChange={(e) => setJoinId(e.target.value)}
-                            className="border-2 border-black rounded-lg p-2 w-full"
+                            className=" rounded-lg p-2 w-full"
                             placeholder="Enter Join ID"
                             required
                         />
@@ -38,7 +38,7 @@ const JoinQuiz = () => {
                     {/* Join Button */}
                     <button
                         type="submit"
-                        className="bg-black text-white rounded-lg p-2 w-full cursor-pointer"
+                        className="bg-white font-black text-2xl text-black rounded-lg p-2 w-full cursor-pointer"
                     >
                         Join
                     </button>
