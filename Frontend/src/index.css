@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.txt-green{
+    color: #01A259;
+}
+.bg-logo-green{
+    background-color:#01A259;
+}
+.txt-dark-blue{
+    color:#012D3F;
+}
+.shadow-header {
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
