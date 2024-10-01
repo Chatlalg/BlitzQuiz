@@ -20,12 +20,12 @@ function Register() {
     
     try {
       // Post form data to the server 
-      const response = await axios.post('http://localhost:4000/register', {
-        accountType,
+      const response = await axios.post('http://localhost:4000/api/auth/signup', {
+        role:accountType,
         username,
         email,
         password
-      });
+      },{withCredentials:true});
       
       // If registration is successful, navigate to login page
       if (response.status === 200) {
