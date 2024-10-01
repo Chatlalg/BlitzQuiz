@@ -15,11 +15,11 @@ function Login() {
     
     try {
       
-      const response = await axios.post('http://localhost:4000/login', {
+      const response = await axios.post('http://localhost:4000/api/auth/login', {
         email,
         password
-      });
-      
+      },{withCredentials:true});
+      console.log(response.data)
       if (response.data.role === 'student' || response.data.role === 'Student') {
         navigate('/studentDashboard');
       } else if (response.data.role === 'teacher' || response.data.role === 'Teacher') {
