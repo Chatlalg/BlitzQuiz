@@ -15,8 +15,9 @@ export const verifyToken = (req,res,next)=>{
             
             return res.status(403).send("Token is not valid")};
         req.userId = payload.userId;
+        req.email = payload.email;
         console.log(payload.userId)
-        console.log(req.userId)
+        console.log(payload.email)
         console.log(payload.role)
 
         next();
