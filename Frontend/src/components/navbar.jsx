@@ -5,7 +5,7 @@ import siteLogo from "../assets/Logo/black-logo.png";
 import profileIcon from "../assets/Logo/profile1.png"
 const Navbar = () => {
     return (
-        <div className='w-auto h-auto bg-emerald-300 flex py-2 font-sourceSans items-center justify-between px-12'>
+        <div className='w-auto h-auto bg-[#3FF4A1] flex py-2 font-sourceSans items-center justify-between px-12'>
             <img src={siteLogo} alt="logo" className='h-10 p-1'></img>
             <div className=' flex text-xl space-x-28 ml-24'>
                 <NavLink to="/teacherdashboard/myquizzes" className={({ isActive }) => (isActive ? "font-bold" : "")}><p>My Quizzes</p></NavLink>

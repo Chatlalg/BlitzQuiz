@@ -23,9 +23,9 @@ function Login() {
       },{withCredentials:true});
       console.log(response.data)
       if (response.data.role === 'student' || response.data.role === 'Student') {
-        navigate('/studentDashboard');
+        navigate('/studentdashboard');
       } else if (response.data.role === 'teacher' || response.data.role === 'Teacher') {
-        navigate('/teacherDashboard');
+        navigate('/teacherdashboard');
       } else {
         console.log('Unknown role received from server');
       }

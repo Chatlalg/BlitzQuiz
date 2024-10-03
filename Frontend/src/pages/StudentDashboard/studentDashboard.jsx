@@ -5,18 +5,18 @@ import favicon from "../../assets/Logo/favicon.png";
 import profile from "../../assets/Logo/userprofile.png";
 import JoinQuiz from './join';
 import { NavLink } from 'react-router-dom';
-import QuizCard from '../TeacherDashboard/quizCard';
+import QuizCard from './quizCard';
 import Footer from "../../components/footer";
 const StudentDashboard = () => {
   return (
     <div className="w-full h-full flex flex-col items-center">
       {/* Navbar */}
       <div className="w-full flex justify-between px-16 pt-4 pb-3">
-        <NavLink to="/studentDashboard">
+        <NavLink to="/studentdashboard">
           <img src={siteLogo} alt="logo" className="h-10 p-1" />
         </NavLink>
 
-        <NavLink to="/studentDashboard/profile">
+        <NavLink to="/studentdashboard/profile">
           <img src={profile} alt="profile" className="h-10 " />
         </NavLink>
       </div>

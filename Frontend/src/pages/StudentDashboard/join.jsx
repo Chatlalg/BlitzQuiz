@@ -10,14 +10,14 @@ const JoinQuiz = () => {
     const navigate=useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
-        navigate('/studentDashboard/quiz')
+        navigate('/studentdashboard/quiz')
         // try {
         //     const response = await axios.post('http://localhost:4000/joinQuiz', {
         //         joinId,
         //     },{withCredentials:true});
 
         //     if(response.status===200){
-        //         navigate('/studentDashboard/quiz');
+        //         navigate('/studentdashboard/quiz');
         //     }
         //     else{
         //         console.log('Invalid Quiz code');
