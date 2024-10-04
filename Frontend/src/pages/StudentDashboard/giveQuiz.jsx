@@ -1,8 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import "../../index.css";
 import MultipleChoiceForm from '../../components/mcqs';
 import Footer from "../../components/footer"
+import { useNavigate } from 'react-router';
+
 const GiveQuiz = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const token = localStorage.getItem('auth-token'); // or fetch the JWT from cookies
+        if (!token) {
+          throw new Error('No token found');
+        }
+
+        // Optionally, verify the token by making an API call
+        // await axios.get('/api/auth/verify-token', {
+        //   headers: {
+        //     Authorization: `Bearer ${token}`,
+        //   },
+        // });
+      } catch (error) {
+        // If token is invalid or not found, redirect to login
+        navigate('/login');
+      }
+    };
+
+    checkAuth();
+  }, [navigate]);
   const quizname = "Web Development";
   const teachername = "Soham Joshi";
   const noqs = 15;

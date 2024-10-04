@@ -1,5 +1,5 @@
 import {Router} from "express";
-import { generateQuiz, getQuiz, login, signup} from "../controllers/authcontroller.js";
+import { generateQuiz, getQuiz, getuserdata, login, signup} from "../controllers/authcontroller.js";
 import { verifyToken } from "../middlewares/authmiddleware.js";
 import multer from "multer";
 const authRoutes = Router();
@@ -18,5 +18,6 @@ authRoutes.post("/signup",signup);
 authRoutes.post("/login",login)
 authRoutes.post("/generate_quiz",verifyToken,generateQuiz)
 authRoutes.post("/get_quiz",verifyToken,getQuiz)
-
+authRoutes.post("/getuserdata",verifyToken,getuserdata)
+//submit-quiz counter for number of peple atteneded qiuiz 
 export default authRoutes
