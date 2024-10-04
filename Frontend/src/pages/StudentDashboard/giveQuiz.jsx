@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import "../../index.css";
 import MultipleChoiceForm from '../../components/mcqs';
 import Footer from "../../components/footer"
@@ -30,44 +30,44 @@ const GiveQuiz = () => {
 
     checkAuth();
   }, [navigate]);
-  const location = useLocation(); 
+  const location = useLocation();
   const [userData, setUserData] = useState(null);
   const [loading, setLoading] = useState(true);
-const { quizData } = location.state || {};
-const { alluserinfo } = location.state || {};
-const{quizid}=location.state || {};
-console.log("quizid",quizid)
-console.log("iam printing all useringo",alluserinfo)
-console.log(quizData);
-let questionarray=[];
-let correctanswer=[];
-for(let key in quizData.questions){
-  // console.log(quizData.questions.key)
-  // console.log(quizData.questions[key])
-  questionarray.push(quizData.questions[key])
-}
-for(let key in quizData.answers){
-  // console.log(quizData.questions.key)
-  // console.log(quizData.questions[key])
-  correctanswer.push(quizData.answers[key])
-}
-// console.log(questionarray)
-// console.log(correctanswer)
+  const { quizData } = location.state || {};
+  const { alluserinfo } = location.state || {};
+  const { quizid } = location.state || {};
+  console.log("quizid", quizid)
+  console.log("iam printing all useringo", alluserinfo)
+  console.log(quizData);
+  let questionarray = [];
+  let correctanswer = [];
+  for (let key in quizData.questions) {
+    // console.log(quizData.questions.key)
+    // console.log(quizData.questions[key])
+    questionarray.push(quizData.questions[key])
+  }
+  for (let key in quizData.answers) {
+    // console.log(quizData.questions.key)
+    // console.log(quizData.questions[key])
+    correctanswer.push(quizData.answers[key])
+  }
+  // console.log(questionarray)
+  // console.log(correctanswer)
   useEffect(() => {
     const fetchUserData = async () => {
       setLoading(true);
       try {
         const authtoken = localStorage.getItem('auth-token');
-            const response = await axios.post('http://localhost:4000/api/auth/getuserdata', 
-                { authtoken }, 
-                {
-                  headers: {
-                    'Content-Type': 'application/json' 
-                  },
-                  withCredentials: true 
-                }
-              );    console.log(response.data)
-        setUserData(response.data); 
+        const response = await axios.post('http://localhost:4000/api/auth/getuserdata',
+          { authtoken },
+          {
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            withCredentials: true
+          }
+        ); console.log(response.data)
+        setUserData(response.data);
       } catch (error) {
         console.error('Error fetching user data:', error);
       } finally {
@@ -75,9 +75,9 @@ for(let key in quizData.answers){
       }
     };
 
-    fetchUserData(); 
+    fetchUserData();
   }, [location]);
-  
+
   const quizname = "Web Development";
   const teachername = "Soham Joshi";
   const noqs = 15;
@@ -115,10 +115,10 @@ for(let key in quizData.answers){
 
       {/* Quiz */}
       <div className='w-full h-auto pl-24'>
-      <MultipleChoiceForm questions={questionarray} answers={correctanswer} alluserinfo={alluserinfo} quizid={quizid}/>
+        <MultipleChoiceForm questions={questionarray} answers={correctanswer} alluserinfo={alluserinfo} quizid={quizid} />
       </div>
       {/* Footer */}
-      <Footer/>
+      <Footer />
     </div>
   );
 };
