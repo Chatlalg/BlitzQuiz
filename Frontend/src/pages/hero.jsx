@@ -30,7 +30,7 @@ function Hero() {
             </div>
 
             {/* About us */}
-            <div className="flex items-center justify-around pt-10 px-28 bg-white">
+            <div className="flex items-center justify-around pt-12 px-28 bg-white mb-32">
                 {/* Text content */}
                 <div className="w-auto ">
                     <h1 className="text-[40px] font-bold txt-dark-blue mb-4">
