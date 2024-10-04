@@ -13,7 +13,7 @@ const QuizCard = (props) => {
         <div className='flex flex-col font-montserrat justify-center text-base leading-snug '>
             <p className='font-extrabold '>{props.title}</p>
             <p className=' '>Teacher: {props.teacher}</p>
-            <p className=' '>Score: {props.score}</p>
+            <p className=' '>Score: {props.score}/100</p>
             <p className=' '>{props.question} Q</p>
         </div>
         </div>

@@ -3,7 +3,7 @@ import Footer from '../../components/footer'
 import Navbar from '../../components/navbar'
 import GiveQuiz from '../StudentDashboard/giveQuiz'
 import MultipleChoiceForm from '../../components/mcqs'
-
+import GeneratedQuestions from './generatedQuestions'
 import Topbar from './topbar'
 
 const GeneratedQuiz = () => {
@@ -28,9 +28,7 @@ const GeneratedQuiz = () => {
         <div className='w-full h-auto'>
             <Navbar />
             <Topbar/>
-            <div className='w-full h-auto'>
-                
-            </div>
+            <GeneratedQuestions questions={questions}/>
             <Footer />
         </div>
     )
