@@ -23,6 +23,7 @@ function App() {
           <Route path="/studentdashboard/profile" element={<StudentProfile/>}/>
           <Route path="/studentdashboard/quiz" element={<GiveQuiz/>}/>
           <Route path="/teacherdashboard/myquizzes" element={<MyQuizzes/>}/>
+          <Route path="/teacherdashboard/" element={<MyQuizzes/>}/>
           <Route path="/teacherdashboard/myuploads" element={<MyUploads/>}/>
           <Route path="/teacherdashboard/mystudents" element={<MyStudents/>}/>
           <Route path="/teacherdashboard/profile" element={<TeacherProfile/>}/>
