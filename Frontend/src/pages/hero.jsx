@@ -1,16 +1,16 @@
-// hero page
-
 import React from "react";
 import "../index.css";
 import { NavLink } from "react-router-dom";
 import siteLogo from "../assets/Logo/blitzquiz-logo-zip-file/logo-no-background.png";
 import siteIllustration from "../assets/Images/illustration.jpg";
 import Footer from "../components/footer";
+
 const logo = siteLogo;
 const illustration = siteIllustration;
+
 function Hero() {
     return (
-        <div>
+        <div className="min-h-screen flex flex-col justify-between">
             {/* Navbar */}
             <div className="w-full h-10 relative flex justify-between items-center px-24 py-11">
                 {/* Logo */}
@@ -32,7 +32,7 @@ function Hero() {
             {/* About us */}
             <div className="flex items-center justify-around pt-12 px-28 bg-white mb-32">
                 {/* Text content */}
-                <div className="w-auto ">
+                <div className="w-auto">
                     <h1 className="text-[40px] font-bold txt-dark-blue mb-4">
                         Create Quizzes in a <br />Flash with BlitzQuiz
                     </h1>
@@ -52,8 +52,8 @@ function Hero() {
                 </div>
             </div>
 
-            <Footer/>
-
+            {/* Footer */}
+            <Footer />
         </div>
     );
 }
