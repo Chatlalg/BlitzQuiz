@@ -16,12 +16,22 @@ function Login() {
     e.preventDefault();
     
     try {
+      const response = await axios.post('http://localhost:4000/api/auth/login', 
+        { email, password }, 
+        {
+          headers: {
+            'Content-Type': 'application/json' // Set Content-Type to application/json
+          },
+          withCredentials: true // Keeps the same configuration for cookies
+        }
+      );
       
-      const response = await axios.post('http://localhost:4000/api/auth/login', {
-        email,
-        password
-      },{withCredentials:true});
+      // const response = await axios.post('http://localhost:4000/api/auth/login', {
+      //   email,
+      //   password
+      // },{withCredentials:true});
       console.log(response.data)
+      localStorage.setItem("auth-token",response.data.authtoken)
       if (response.data.role === 'student' || response.data.role === 'Student') {
         navigate('/studentdashboard');
       } else if (response.data.role === 'teacher' || response.data.role === 'Teacher') {
