@@ -10,6 +10,9 @@ const Topbar = () => {
     case '/teacherdashboard/myquizzes':
       topbartitle = "My Quizzes";
       break;
+    case '/teacherdashboard':
+      topbartitle="My Quizzes";
+      break;
     case '/teacherdashboard/myuploads':
       topbartitle = "My Uploads";
       break;

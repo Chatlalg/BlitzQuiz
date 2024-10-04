@@ -126,7 +126,7 @@ export const generateQuiz = async (req, res) => {
         {
           parts: [
             {
-              text: "Generate mcq quiz on computer with 5 questions out of given 4 options one should be correct. Response should be in JSON format with template {question_number:[question, option_1, option_2, option_3, option_4]}. Generate answers in JSON format with template {Question_number:[correct_option, index of correct option in question array]}",
+              text: "Generate mcq quiz on science with 6 questions out of given 4 options one should be correct. Response should be in JSON format with template {question_number:[question, option_1, option_2, option_3, option_4]}. Generate answers in JSON format with template {Question_number:[correct_option, index of correct option in question array]}",
             },
           ],
         },
