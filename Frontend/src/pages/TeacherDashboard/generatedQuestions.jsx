@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router';
 const GeneratedQuestions = ({ questions }) => {
+    const navigate=useNavigate();
     const [userAnswers, setUserAnswers] = useState({});
     const handleAnswerChange = (questionIndex, selectedOption) => {
         setUserAnswers({
@@ -11,11 +12,11 @@ const GeneratedQuestions = ({ questions }) => {
 
     const handleSave = (e) => {
         e.preventDefault();
-        // console.log('Saved answers:', userAnswers);
+        navigate("/teacherdashboard/myquizzes")
     };
 
     return (
-        <div className='px-24 py-10'>
+        <div className='px-24 py-10 '>
             <form onSubmit={handleSave}>
                 {questions.length > 0 ? (
                     questions.map((question, index) => (
