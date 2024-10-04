@@ -10,6 +10,7 @@ import MyUploads from "./pages/TeacherDashboard/myUploads";
 import MyStudents from "./pages/TeacherDashboard/myStudents";
 import TeacherProfile from "./pages/TeacherDashboard/teacherProfile";
 import {BrowserRouter as Router, Route, Routes, BrowserRouter} from 'react-router-dom';
+import GeneratedQuiz from "./pages/TeacherDashboard/generatedQuiz";
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/teacherdashboard/myuploads" element={<MyUploads/>}/>
           <Route path="/teacherdashboard/mystudents" element={<MyStudents/>}/>
           <Route path="/teacherdashboard/profile" element={<TeacherProfile/>}/>
+          <Route path="/teacherdashboard/generatedquiz" element={<GeneratedQuiz/>}/>
         </Routes>
       </div>
     </BrowserRouter>

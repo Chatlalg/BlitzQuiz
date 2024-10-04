@@ -5,24 +5,27 @@ import { useLocation } from 'react-router';
 const Topbar = () => {
   const location = useLocation();
   const currentPath = location.pathname;
-  let toparTitle;
+  let topbartitle;
   switch (currentPath) {
     case '/teacherdashboard/myquizzes':
-      toparTitle = "My Quizzes";
+      topbartitle = "My Quizzes";
       break;
     case '/teacherdashboard/myuploads':
-      toparTitle = "My Uploads";
+      topbartitle = "My Uploads";
       break;
     case '/teacherdashboard/mystudents':
-      toparTitle = "My Students";
+      topbartitle = "My Students";
+      break;
+    case '/teacherdashboard/generatedquiz':
+      topbartitle="Generated Quiz";
       break;
     default:
-      toparTitle = "Page not found!";
+      topbartitle = "Page not found!";
   }
   return (
     <div className='w-full h-auto flex justify-center px-28 py-8'>
       <div className="w-full h-auto bg-gradient-to-l from-[#3FF4A1] to-[#258E5E] rounded-lg p-6 flex justify-center">
-        <p className='font-extrabold font-montserrat text-3xl tracking-widest'>{toparTitle}</p>
+        <p className='font-extrabold font-montserrat text-3xl tracking-widest'>{topbartitle}</p>
       </div>
     </div>
   )

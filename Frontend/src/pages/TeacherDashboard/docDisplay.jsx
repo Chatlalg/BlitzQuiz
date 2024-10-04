@@ -4,7 +4,7 @@ import "../../index.css"
 import DocRow from './docRow'
 const DocDisplay = () => {
   return (
-    <div className="w-full h-auto flex flex-col px-28 my-10">
+    <div className="w-full h-auto flex flex-col px-28 my-10 ">
       {/* Namebar */}
       <div className='w-full rounded-t-lg h-auto bg-[#D9D9D9] p-3 px-12 drop-shadow-md'>
         <p className='font-sourceSans text-lg'>Name</p>
