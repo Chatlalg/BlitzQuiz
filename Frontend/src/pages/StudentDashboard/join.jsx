@@ -6,6 +6,8 @@ import axios from 'axios';
 import '../../index.css';
 
 const JoinQuiz = () => {
+    const [loading, setLoading] = useState(true);
+    const [userData, setUserData] = useState(null);
 
     const [joinId, setJoinId] = useState('');
     const navigate=useNavigate();
@@ -31,6 +33,30 @@ const JoinQuiz = () => {
     
         checkAuth();
       }, [navigate]);
+      useEffect(() => {
+        const fetchUserData = async () => {
+          setLoading(true);
+          try {
+            const authtoken = localStorage.getItem('auth-token');
+                const response = await axios.post('http://localhost:4000/api/auth/getuserdata', 
+                    { authtoken }, 
+                    {
+                      headers: {
+                        'Content-Type': 'application/json' 
+                      },
+                      withCredentials: true 
+                    }
+                  );    console.log(response.data)
+            setUserData(response.data); 
+          } catch (error) {
+            console.error('Error fetching user data:', error);
+          } finally {
+            setLoading(false);
+          }
+        };
+    
+        fetchUserData(); 
+      }, []);
     const handleSubmit = async (e) => {
         e.preventDefault();
         // navigate('/studentdashboard/quiz')
@@ -40,17 +66,15 @@ const JoinQuiz = () => {
                 { joinId,authtoken }, 
                 {
                   headers: {
-                    'Content-Type': 'application/json' // Set the appropriate content type
+                    'Content-Type': 'application/json' 
                   },
-                  withCredentials: true // Keeps your existing configuration
+                  withCredentials: true 
                 }
               );
-            // const response = await axios.post('http://localhost:4000/api/auth/get_quiz', {
-            //     joinId,
-            // },{withCredentials:true});
+            
 
             if(response.status===200){
-                navigate('/studentdashboard/quiz');
+                navigate('/studentdashboard/quiz', { state: { quizData: response.data,alluserinfo:userData,quizid:joinId } });
             }
             else{
                 console.log('Invalid Quiz code');
