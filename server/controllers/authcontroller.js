@@ -161,11 +161,16 @@ export const generateQuiz = async (req, res) => {
       console.error("Error generating ID:");
     res.status(500).json({ message: "Failed to generate ID" });
     } 
+    return res.json({
+      quizQuestionsJson,
+      quizAnswersJson
+    });
     
   } else {
     console.error("Couldn't extract the JSON parts correctly.");
+    res.send("error")
   }
-  return res.send("ok");
+
 };
 
 export const getQuiz = async (req,res)=>{
