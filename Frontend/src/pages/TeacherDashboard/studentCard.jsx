@@ -7,7 +7,7 @@ const StudentCard = (props) => {
             <div className='w-full h-auto rounded-lg py-6 gap-8 px-4 shadow-dark flex font-sourceSans'>
                 <img src={defaultPhoto} alt="user photo" className='rounded-lg h-20'></img>
                 <div className='flex flex-col justify-center gap-0.5'>
-                    <p>{props.studentname}</p>
+                    <p >{props.studentname}</p>
                     <p>Attempted Quizzes: {props.attempted}</p>
                     <p>Average Score: {props.avgscore}%</p>
                 </div>
