@@ -1,6 +1,6 @@
 // login page
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import siteLogo from "../assets/Logo/blitzquiz-logo-zip-file/logo-no-background.png";
@@ -107,7 +107,7 @@ function Login() {
             {/* Signup Link */}
             <div className="flex justify-center pt-2">
               <NavLink to="/register" className="font-montserrat text-gray-700 text-sm">
-                Don't have an account yet? <span className="text-black font-bold hover:underline">Sign Up</span>
+                Don&apos;t have an account yet?<span className="text-black font-bold hover:underline">Sign Up</span>
               </NavLink>
             </div>
           </form>

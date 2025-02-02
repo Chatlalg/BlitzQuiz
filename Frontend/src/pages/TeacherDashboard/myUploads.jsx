@@ -17,10 +17,6 @@ const MyUploads = () => {
     e.preventDefault(); 
   };
 
-  const handleClose = () => {
-    setIsOpen(false); 
-  };
-
   return (
     <div onDrop={handleDrop} onDragOver={handleDragOver}>
       <Navbar/>
